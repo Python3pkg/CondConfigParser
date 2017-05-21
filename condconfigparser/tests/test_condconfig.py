@@ -58,7 +58,7 @@ def load_tests(loader, tests, ignore):
 def loadCfgFile(cfgFile, context):
     cfgfilePath = os.path.join(os.path.dirname(__file__), "data", cfgFile)
     with open(cfgfilePath, "r", encoding="utf-8") as f:
-        config = RawConditionalConfig(f, context.keys())
+        config = RawConditionalConfig(f, list(context.keys()))
 
     return config
 

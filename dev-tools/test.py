@@ -48,7 +48,7 @@ def main():
             if test == "P":
                 pprint(tree)
             else:
-                print("{:tree}".format(tree))
+                print(("{:tree}".format(tree)))
         elif test in ("t", "tokens"):
             lexer = Lexer(f)
             gen = lexer.tokenGenerator()
@@ -61,7 +61,7 @@ def main():
                        "scenarios":
                            ["nimitz_demo", "clemenceau_demo", "balloon_demo"]}
 
-            config = RawConditionalConfig(f, context.keys())
+            config = RawConditionalConfig(f, list(context.keys()))
             pprint(config.eval(context))
         else:
             sys.exit("Invalid test identifier: {!r}".format(test))
